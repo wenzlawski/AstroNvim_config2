@@ -13,11 +13,11 @@ local mappings = {
     -- better buffer navigation
     ["]b"] = false,
     ["[b"] = false,
-    ["<S-l>"] = {
+    ["<leader>bn"] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
-    ["<S-h>"] = {
+    ["<leader>bp"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
@@ -137,20 +137,20 @@ local mappings = {
     ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
     ["<leader>xT"] = { "<cmd>TodoTrouble<cr>", desc = "TODOs (Trouble)" },
     ["<leader>;"] = { desc = "󰧑 AI Assistant" },
-    ["<leader>;;"] = {
-      function()
-        vim.cmd.Codeium(vim.g.codeium_enabled == 0 and "Enable" or "Disable")
-        astro_utils.notify("Codeium " .. (vim.g.codeium_enabled == 0 and "Disabled" or "Enabled"))
-      end,
-      desc = "Toggle Global",
-    },
-    ["<leader>;b"] = {
-      function()
-        vim.cmd.Codeium(vim.b.codeium_enabled == 0 and "EnableBuffer" or "DisableBuffer")
-        astro_utils.notify("Codeium (buffer) " .. (vim.b.codeium_enabled == 0 and "Disabled" or "Enabled"))
-      end,
-      desc = "Toggle Buffer",
-    },
+    -- ["<leader>;;"] = {
+    --   function()
+    --     vim.cmd.Codeium(vim.g.codeium_enabled == 0 and "Enable" or "Disable")
+    --     astro_utils.notify("Codeium " .. (vim.g.codeium_enabled == 0 and "Disabled" or "Enabled"))
+    --   end,
+    --   desc = "Toggle Global",
+    -- },
+    -- ["<leader>;b"] = {
+    --   function()
+    --     vim.cmd.Codeium(vim.b.codeium_enabled == 0 and "EnableBuffer" or "DisableBuffer")
+    --     astro_utils.notify("Codeium (buffer) " .. (vim.b.codeium_enabled == 0 and "Disabled" or "Enabled"))
+    --   end,
+    --   desc = "Toggle Buffer",
+    -- },
   },
   v = {
     ["<leader>r"] = { "<Plug>Send", desc = "Send to REPL" },

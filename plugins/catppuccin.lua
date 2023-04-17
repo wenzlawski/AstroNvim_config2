@@ -1,5 +1,6 @@
 return {
   "catppuccin/nvim",
+  priority = 1000,
   name = "catppuccin",
   opts = {
     dim_inactive = { enabled = true, percentage = 0.25 },

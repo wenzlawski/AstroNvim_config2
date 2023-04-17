@@ -3,6 +3,7 @@ return {
   dependencies = {
     { "mxsdev/nvim-dap-vscode-js", opts = { debugger_cmd = { "js-debug-adapter" }, adapters = { "pwa-node" } } },
     { "theHamsta/nvim-dap-virtual-text", config = true },
+    { "mfussenegger/nvim-dap-python" },
   },
   config = function()
     local dap = require "dap"
